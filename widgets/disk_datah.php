@@ -1,5 +1,5 @@
 <?php
-include ("/srv/rutorrent/php/util.php");
+include ("/srv/panel/inc/util.php");
 include ($_SERVER['DOCUMENT_ROOT'].'/widgets/class.php');
 require_once ($_SERVER['DOCUMENT_ROOT'].'/inc/localize.php');
 

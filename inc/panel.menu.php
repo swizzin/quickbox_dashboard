@@ -11,86 +11,122 @@
       <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
       <div class="header-right">
         <ul class="headermenu">
-          <?php if ($username == "$master") { ?>
-            <?php if (file_exists('/install/.developer.lock')) { ?>
-            <li>
-              <div class="btn-group">
-                <button type="button" class="btn btn-logged">
-                  <a href="#" class="label label-warning" style="">You are on the QuickBox Development Repo</a>
-                </button>
-              </div>
-            </li>
-            <?php } ?>
-            <?php if (file_exists('/install/.foo.lock')) { ?>
-            <li>
-              <div class="btn-group">
-                <button type="button" class="btn btn-logged" data-toggle="dropdown">
-                  <a href="#" class="title" style="color:#8fa8f6">QuickBox +</a>
-                  <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu pull-right" style="font-size: 13px">
-                  <li><a href="//quickbox.io/category/announcements/" target="_blank">Announcements</a></li>
-                  <li><a href="https://quickbox.io/readme-md/" target="_blank">README.md</a></li>
-                  <li><a href="https://github.com/QuickBox/QB/compare/v2.5.0...<?php echo $version; ?>" target="_blank">CHANGELOG</a></li>
-                </ul>
-              </div>
-            </li>
-            <?php } ?>
-
-            <li>
-              <div class="btn-group">
-                <button type="button" class="btn btn-logged" data-toggle="dropdown">
-                  <a href="#" style="color: #FFFFFF">#swizzin</a>
-                  <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu pull-right" style="font-size: 13px">
-                    <li style="border-bottom: 1px solid #444">
-                    <span class="title" style="color: #fff; font-weight: 300; font-size: 13px;"><?php echo T('JOIN_US_TXT'); ?></span>
-                    </li>
-                    <li>
-                    <span style="padding: 6px 10px; color:#fff"><strong style="color: #4CD4B0">host:</strong> irc.swizzin.ltd:6697</span><br/>
-                    <span style="padding: 6px 10px; color:#fff"><strong style="color: #4CD4B0">chan:</strong> #swizzin</span><br/>
-                    </li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <?php $language = array();
-                $language[] = array('file' => 'lang_dk', 'title' =>'Danish');
-                $language[] = array('file' => 'lang_en', 'title' =>'English');
-                $language[] = array('file' => 'lang_fr', 'title' =>'French');
-                $language[] = array('file' => 'lang_de', 'title' =>'German'); { ?>
-              <div class="btn-group">
-                <button type="button" class="btn btn-logged" data-toggle="dropdown">
-                  <?php echo T('LANG_SELECT'); ?>
-                  <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu pull-right">
-                <li><span style="margin-top:5x"></span></li>
-                <?php foreach($language as $lang) { ?>
-                <li><a href='?langSelect-<?php echo $lang['file'] ?>=true'><img class='lang-flag' src='lang/flag_<?php echo $lang['file'] ?>.png' /><?php echo $lang['title'] ?></a></li>
-                <?php } ?>
-              </ul>
-            </div>
-            <?php } ?>
-          </li>
+          <?php if (file_exists('/install/.developer.lock')) { ?>
           <li>
-            <?php $option = array();
-              $option[] = array('file' => 'defaulted', 'title' =>'Defaulted');
-              $option[] = array('file' => 'smoked', 'title' =>'Smoked'); { ?>
             <div class="btn-group">
-              <button type="button" class="btn btn-logged" data-toggle="dropdown">
-                <?php echo T('THEME_SELECT'); ?>
-                <span class="caret"></span>
+              <button type="button" class="btn btn-logged">
+                <a href="#" class="label label-warning" style="">You are on the QuickBox Development Repo</a>
               </button>
-              <ul class="dropdown-menu pull-right">
-              <li><span style="margin-top:5x"></span></li>
-              <?php foreach($option as $theme) { ?>
-              <li><a href="javascript:void()" data-toggle="modal" data-target="#themeSelect<?php echo $theme['file'] ?>Confirm"><img class='lang-flag' src='img/themes/opt_<?php echo $theme['file'] ?>.png' /><?php echo $theme['title'] ?></a></li>
-              <?php } ?>
-              </ul>
             </div>
-            <?php } ?>
+          </li>
+          <?php } ?>
+          <?php if ($username == "$master") { ?>
+          <li>
+            <div id="noticePanel" class="btn-group">
+              <button class="btn" data-toggle="dropdown">
+                <i class="fa fa-menu"></i> swizzin Menu <span class="caret"></span>
+              </button>
+              <div id="noticeDropdown" class="dropdown-menu dm-notice pull-right">
+                <div role="tabpanel">
+                  <!-- Nav tabs -->
+                  <ul class="nav nav-tabs nav-justified" role="tablist">
+                    <li class="active"><a data-target="#quickplus" data-toggle="tab">swizzin+</a></li>
+                    <li><a data-target="#chat" data-toggle="tab">Chat</a></li>
+                    <li><a data-target="#dashadjust" data-toggle="tab">Dashboard</a></li>
+                  </ul>
+
+                  <!-- Tab panes -->
+                  <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="quickplus">
+                      <ul class="list-group">
+                        <li class="list-group-item">
+                          <div class="row">
+                            <div class="col-xs-12">
+                              <small><a href="https://github.com/liaralabs/swizzin/blob/master/README.md" target="_blank">README</a></small>
+                              <small><a href="https://github.com/liaralabs/swizzin/blob/master/CHANGELOG.md" target="_blank">CHANGELOG</a></small>
+                            </div>
+                          </div>
+                        </li>
+
+                        <li class="list-group-item">
+                          <div class="row">
+                            <div class="col-xs-12">
+                              <h5>swizzin</h5>
+                            </div>
+                            <div class="col-xs-12">
+                              <div class="col-xs-12 col-md-6" style="padding: 0">
+                                <ul style="padding-left: 5px">
+                                <li><small><a href="https://github.com/liaralabs/swizzin" target="_blank" alt="View swizzin on github">Github</a></small></li>
+                                <li><small><a href="https://swizzin.ltd" target="_blank" alt="swizzin homepage">Home</a></small></li>
+                                </ul>
+                              </div>
+                              <div class="col-xs-12 col-md-6" style="padding: 0">
+                                <ul style="padding-left: 5px">
+                                <li><small><a href="https://github.com/liaralabs/swizzin/wiki" target="_blank" alt="swizzin wiki">Wiki</a></small></li>
+                                <li><small><a href="https://github.com/liaralabs/swizzin/issues" target="_blank"><?php echo T('ISSUE_REPORT_TXT'); ?></a></small></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                      <!--a class="btn-more" href="">View More QuickBox <i class="fa fa-long-arrow-right"></i></a-->
+                    </div><!-- tab-pane -->
+
+                    <div role="tabpanel" class="tab-pane" id="chat">
+                      <ul class="list-group notice-list">
+                        <li class="list-group-item" style="padding-top: 10px;">
+                          <div class="row">
+                            <div class="col-xs-2">
+                              <i class="fa fa-comment"></i>
+                            </div>
+                            <div class="col-xs-10">
+                              <h5><?php echo T('JOIN_US_TXT'); ?></h5>
+                              <small style="color:#fff"><strong style="color: #4CD4B0">host:</strong> irc.swizzin.ltd +6697</small>
+                              <small style="color:#fff"><strong style="color: #4CD4B0">chan:</strong> #swizzin</small>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div><!-- tab-pane -->
+
+                    <div role="tabpanel" class="tab-pane" id="dashadjust">
+                      <ul class="list-group">
+                        <li class="list-group-item">
+                          <div class="row">
+                            <div class="col-xs-12">
+                              <div class="col-xs-12 col-md-6" style="padding: 0">
+                                <?php $language = array();
+                                $language[] = array('file' => 'lang_dk', 'title' =>'Danish');
+                                $language[] = array('file' => 'lang_en', 'title' =>'English');
+                                $language[] = array('file' => 'lang_fr', 'title' =>'French');
+                                $language[] = array('file' => 'lang_de', 'title' =>'German'); { ?>
+                                <h5><?php echo T('LANG_SELECT'); ?></h5>
+                                <?php foreach($language as $lang) { ?>
+                                  <small><a href='?langSelect-<?php echo $lang['file'] ?>=true'><img class='lang-flag' src='lang/flag_<?php echo $lang['file'] ?>.png' /><?php echo $lang['title'] ?></a></small>
+                                <?php } ?>
+                                <?php } ?>
+                              </div>
+                              <div class="col-xs-12 col-md-6" style="padding: 0">
+                              <?php $option = array();
+                              $option[] = array('file' => 'defaulted', 'title' =>'Defaulted');
+                              $option[] = array('file' => 'smoked', 'title' =>'Smoked'); { ?>
+                                <h5><?php echo T('THEME_SELECT'); ?></h5>
+                                <?php foreach($option as $theme) { ?>
+                                  <small><a href="javascript:void()" data-toggle="modal" data-target="#themeSelect<?php echo $theme['file'] ?>Confirm"><img class='lang-flag' src='img/themes/opt_<?php echo $theme['file'] ?>.png' /><?php echo $theme['title'] ?></a></small>
+                                <?php } ?>
+                              <?php } ?>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </li>
           <?php } ?>
           <li>
@@ -110,20 +146,22 @@
 <section>
   <div class="leftpanel ps-container">
     <div class="leftpanelinner">
-      <?php if (file_exists('/install/.foo.lock')) { ?>
+    <?php if (file_exists('/install/.foo.lock')) { ?>
       <ul class="nav nav-tabs nav-justified nav-sidebar">
         <li class="tooltips active" data-toggle="tooltip" title="<?php echo T('MAIN_MENU'); ?>" data-placement="bottom"><a data-toggle="tab" data-target="#mainmenu"><i class="tooltips fa fa-ellipsis-h"></i></a></li>
-          <li class="tooltips" data-toggle="tooltip" title="<?php echo T('HELP_COMMANDS'); ?>" data-placement="bottom"><a data-toggle="tab" data-target="#help"><i class="tooltips fa fa-question-circle"></i></a></li>
+        <?php if ($username == "$master"){ ?>
+          <li class="tooltips" data-toggle="tooltip" title="<?php echo T('RPLUGIN_MENU'); ?>" data-placement="bottom"><a data-toggle="tab" data-target="#plugins"><i class="tooltips fa fa-puzzle-piece"></i></a></li>
+        <?php } ?>
+        <li class="tooltips" data-toggle="tooltip" title="<?php echo T('HELP_COMMANDS'); ?>" data-placement="bottom"><a data-toggle="tab" data-target="#help"><i class="tooltips fa fa-question-circle"></i></a></li>
       </ul>
       <?php } ?>
-
       <div class="tab-content">
         <!-- ################# MAIN MENU ################### -->
         <div class="tab-pane active" id="mainmenu">
           <h5 class="sidebar-title"><?php echo T('MAIN_MENU'); ?></h5>
           <ul class="nav nav-pills nav-stacked nav-quirk">
             <!--li class="active"><a href="index.php"><i class="fa fa-home"></i> <span>Dashboard</span></a></li-->
-            <?php if (file_exists('/home/'.$username.'/.sessions/rtorrent.lock')) { ?>
+            <?php if (file_exists(/install/.rutorrent.lock)) { ?>
               <li><a class="grayscale" href="/rutorrent" target="_blank"><img src="img/brands/rtorrent.png" class="brand-ico"> <span>ruTorrent</span></a></li>
             <?php } ?>
             <?php if (processExists("deluge-web",$username) && file_exists('/install/.deluge.lock')) { ?>
@@ -148,7 +186,7 @@
               <?php if (file_exists('/install/.jackett.lock')) { ?>
                 <li><a class="grayscale" href="<?php echo "$jackettURL"; ?>" target="_blank"><img src="img/brands/jackett.png" class="brand-ico"> <span>Jackett</span></a></li>
               <?php } ?>
-              <?php if (processExists("medusa",$username) && file_exists('/install/.medusa.lock')) { ?>
+              <?php if (file_exists('/install/.medusa.lock')) { ?>
                 <li><a class="grayscale" href="<?php echo "$medusaURL"; ?>" target="_blank"><img src="img/brands/medusa.png" class="brand-ico"> <span>Medusa</span></a></li>
               <?php } ?>
               <?php if (file_exists('/install/.netdata.lock')) { ?>
@@ -156,6 +194,9 @@
               <?php } ?>
               <?php if (file_exists('/install/.nextcloud.lock')) { ?>
                 <li><a class="grayscale" href="<?php echo "$nextcloudURL"; ?>" target="_blank"><img src="img/brands/nextcloud.png" class="brand-ico"> <span>NextCloud</span></a></li>
+              <?php } ?>
+              <?php if (file_exists('/install/.nzbget.lock')) { ?>
+                <li><a class="grayscale" href="<?php echo "$nzbgetURL"; ?>" target="_blank"><img src="img/brands/nzbget.png" class="brand-ico"> <span>NZBGet</span></a></li>
               <?php } ?>
               <?php if (file_exists('/install/.nzbhydra.lock')) { ?>
                 <li><a class="grayscale" href="<?php echo "$nzbhydraURL"; ?>" target="_blank"><img src="img/brands/nzbhydra.png" class="brand-ico"> <span>NZBHydra</span></a></li>
@@ -181,7 +222,10 @@
               <?php if (file_exists('/install/.sabnzbd.lock')) { ?>
                 <li><a class="grayscale" href="<?php echo "$sabnzbdURL"; ?>" target="_blank"><img src="img/brands/sabnzbd.png" class="brand-ico"> <span>SABnzbd</span></a></li>
               <?php } ?>
-              <?php if (processExists("sickrage",$username) && file_exists('/install/.sickrage.lock')) { ?>
+              <?php if (file_exists('/install/.sickgear.lock')) { ?>
+                <li><a class="grayscale" href="<?php echo "$sickgearURL"; ?>" target="_blank"><img src="img/brands/sickgear.png" class="brand-ico"> <span>SickGear</span></a></li>
+              <?php } ?>
+              <?php if (file_exists('/install/.sickrage.lock')) { ?>
                 <li><a class="grayscale" href="<?php echo "$sickrageURL"; ?>" target="_blank"><img src="img/brands/sickrage.png" class="brand-ico"> <span>SickRage</span></a></li>
               <?php } ?>
               <?php if (processExists("nzbdrone",$username) && file_exists('/install/.sonarr.lock')) { ?>
@@ -197,12 +241,12 @@
                 <li><a class="grayscale" href="<?php echo "$zncURL"; ?>" target="_blank"><img src="img/brands/znc.png" class="brand-ico"> <span>ZNC</span></a></li>
               <?php } ?>
             <?php } ?>
-            <?php if (file_exists('/install/.rtorrent.lock') || file_exists('/install/.deluge.lock')) { ?>
+            <?php if (file_exists('/install/.rtorrent.lock') || file_exists('/install/.deluge.lock') || file_exists('/install/.flood.lock')) { ?>
             <li class="nav-parent">
               <a href=""><i class="fa fa-download"></i> <span><?php echo T('DOWNLOADS'); ?></span></a>
               <ul class="children">
-                <?php if (file_exists('/install/.rtorrent.lock')) { ?>
-                <li><a href="/rtorrent.downloads" target="_blank">ruTorrent</a></a></li>
+                <?php if (file_exists('/install/.rutorrent.lock') || file_exists('/install/.flood.lock')) { ?>
+                <li><a href="/rtorrent.downloads" target="_blank">rTorrent</a></a></li>
                 <?php } ?>
                 <?php if (file_exists('/install/.deluge.lock')) { ?>
                   <li><a href="/deluge.downloads" target="_blank">Deluge</a></li>
@@ -214,7 +258,7 @@
             </li>
             <?php } ?>
             <?php if (processExists("shellinabox",shellinabox) && ($username == "$master")) { ?>
-            <li><a href="/shell/" target="_blank"><i class="fa fa-keyboard-o"></i> <span><?php echo T('WEB_CONSOLE'); ?></span></a></li>
+            <li><a href="/shell" target="_blank"><i class="fa fa-keyboard-o"></i> <span><?php echo T('WEB_CONSOLE'); ?></span></a></li>
             <?php } ?>
             <!-- /// BEGIN INSERT CUSTOM MENU /// -->
             <?php include ($_SERVER['DOCUMENT_ROOT'].'/custom/custom.menu.php'); ?>
@@ -263,11 +307,17 @@
             <li style="padding: 7px"><span style="font-size: 12px; color:#eee">upgradeJackett</span><br/>
               <small><?php echo T('UPGRADEJACKETT_TXT'); ?></small>
             </li>
+            <li style="padding: 7px"><span style="font-size: 12px; color:#eee">upgradeOmbi</span><br/>
+              <small><?php echo T('UPGRADEOMBI_TXT'); ?></small>
+            </li>
             <li style="padding: 7px"><span style="font-size: 12px; color:#eee">upgradePlex</span><br/>
               <small><?php echo T('UPGRADEPLEX_TXT'); ?></small>
             </li>
             <li style="padding: 7px"><span style="font-size: 12px; color:#eee">upgradepyLoad</span><br/>
               <small><?php echo T('UPGRADEPYLOAD_TXT'); ?></small>
+            </li>
+            <li style="padding: 7px"><span style="font-size: 12px; color:#eee">upgradeSABnzbd</span><br/>
+              <small><?php echo T('UPGRADESABNZBD_TXT'); ?></small>
             </li>
             <li style="padding: 7px"><span style="font-size: 12px; color:#eee">setup-pyLoad</span><br/>
               <small><?php echo T('SETUPPYLOAD_TXT'); ?></small>
@@ -285,6 +335,29 @@
             <small><?php echo T('SCREEN_IRSSI_TXT'); ?></small></li>
           </ul>
         </div><!-- tab-pane -->
+
+        <!-- ######################## RUTORRENT PLUGINS TAB ##################### -->
+        <div class="tab-pane" id="plugins">
+          <h5 class="sidebar-title"><?php echo T('PLUGIN_MENU'); ?></h5>
+          <ul class="nav nav-pills nav-stacked nav-quirk">
+            <li class="nav-parent nav-active">
+              <a href=""><i class="fa fa-puzzle-piece"></i> <span><?php echo T('PLUGINS'); ?></span></a>
+              <ul class="children">
+                <li class="info-quote"><p class="info-quote"><?php echo T('PMENU_NOTICE_TXT'); ?></p></li>
+                <?php foreach ($plugins as $plugin) { ?>
+                  <li>
+                  <?php if(file_exists('/srv/rutorrent/plugins/'.$plugin.'/plugin.info')) {
+                    echo "<a href=\"javascript:void()\">$plugin</a> <div class=\"toggle-wrapper pull-right\" style=\"margin-right: -10px; margin-top: 5px;\"> <div class=\"toggle-pen toggle-modern\" onclick=\"location.href='?removeplugin-$plugin=true'\"></div></div>";
+                  } else {
+                    echo "<a href=\"javascript:void()\">$plugin</a> <div class=\"toggle-wrapper pull-right\" style=\"margin-right: -10px; margin-top: 5px;\"> <div class=\"toggle-pdis toggle-modern\" onclick=\"location.href='?installplugin-$plugin=true'\"></div></div>";
+                  } ?>
+                  </li>
+                <?php } ?>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- tab-pane -->
+
       </div><!-- tab-content -->
     </div><!-- leftpanelinner -->
   </div><!-- leftpanel -->

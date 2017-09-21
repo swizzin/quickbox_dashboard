@@ -51,7 +51,7 @@ git reset --hard origin/smoked
 git reset --hard origin/defaulted
 ```
 
-> You may need to restart nginx to see these changes go into effect immediately. You can do so with `service nginx restart`
+> You may need to restart apache to see these changes go into effect immediately. You can do so with `service apache2 restart`
 
 ---
 

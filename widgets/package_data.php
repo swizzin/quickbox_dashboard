@@ -8,35 +8,38 @@ $packages = array(
         'emby',
         'headphones',
         'jackett',
+        'medusa',
         'nextcloud',
+        'nzbget',
         'nzbhydra',
+        'ombi',
         'plex',
         'plexpy',
-        'ombi',
         'pyload',
+        'quassel',
+        'quota',
         'radarr',
         'rapidleech',
         'sabnzbd',
+        'sickgear',
         'sickrage',
-        'subsonic',
         'sonarr',
+        'subsonic',
         'syncthing',
         'x2go',
-        'quota',
-        'quassel',
         'znc'
 );
 
 foreach ($packages as $ipackage) {
 if (isset($_GET['installpackage-'.$ipackage.''])) {
         header('Location: //');
-        shell_exec("sudo /usr/local/bin/swizzin/install/$ipackage.sh");
+        shell_exec("sudo /usr/local/bin/swizzin/box install $ipackage");
 }}
 
 foreach ($packages as $rpackage) {
 if (isset($_GET['removepackage-'.$rpackage.''])) {
         header('Location: /');
-        shell_exec("sudo /usr/local/bin/swizzin/remove/$rpackage.sh");
+        shell_exec("sudo /usr/local/bin/swizzin/box remove $rpackage");
 }}
 
 ?>
