@@ -56,7 +56,7 @@
                     </tr>
                     <?php } ?>
 
-                <?php if ($username == "$master") { ?>
+                <?php if ($username == "$master" && file_exists("/install/.shellinabox.lock")) { ?>
 
                     <tr>
                       <td><span id="appstat_webconsole"></span> Web Console </td>
