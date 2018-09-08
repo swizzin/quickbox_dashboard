@@ -234,20 +234,20 @@
     </div><!-- modal-content -->
   </div><!-- modal-dialog -->
 </div><!-- modal -->
-<!-- PLEXPY UNINSTALL MODAL -->
-<div class="modal bounceIn animated" id="plexpyRemovalConfirm" tabindex="-1" role="dialog" aria-labelledby="PlexPyRemovalConfirm" aria-hidden="true">
+<!-- TAUTULLI UNINSTALL MODAL -->
+<div class="modal bounceIn animated" id="tautulliRemovalConfirm" tabindex="-1" role="dialog" aria-labelledby="TautulliRemovalConfirm" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="PlexPyRemovalConfirm"><?php echo T('UNINSTALL_TITLE'); ?> PlexPy?</h4>
+        <h4 class="modal-title" id="TautulliRemovalConfirm"><?php echo T('UNINSTALL_TITLE'); ?> Tautulli?</h4>
       </div>
       <div class="modal-body">
-        <?php echo T('UNINSTALL_PLEXPY_TXT'); ?>
+        <?php echo T('UNINSTALL_TAUTULLI_TXT'); ?>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo T('CANCEL'); ?></button>
-        <a href="?removepackage-plexpy=true" id="plexpyRemove" class="btn btn-primary"><?php echo T('AGREE'); ?></a>
+        <a href="?removepackage-tautulli=true" id="tautulliRemove" class="btn btn-primary"><?php echo T('AGREE'); ?></a>
       </div>
     </div><!-- modal-content -->
   </div><!-- modal-dialog -->
@@ -804,11 +804,11 @@ $(document).ready(function() {
       sticky: true
     });
   });
-  // PlexPYRemove
-  $('#plexpyRemove').click(function(){
+  // TautulliRemove
+  $('#tautulliRemove').click(function(){
     $.gritter.add({
-      title: '<?php echo T('UNINSTALLING_TITLE'); ?> PlexPY',
-      text: '<?php echo T('UNINSTALLING_TXT_1'); ?> PlexPY <?php echo T('UNINSTALLING_TXT_2'); ?>',
+      title: '<?php echo T('UNINSTALLING_TITLE'); ?> Tautulli',
+      text: '<?php echo T('UNINSTALLING_TXT_1'); ?> Tautulli <?php echo T('UNINSTALLING_TXT_2'); ?>',
       class_name: 'with-icon times-circle danger',
       sticky: true
     });

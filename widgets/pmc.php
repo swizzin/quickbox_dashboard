@@ -153,12 +153,12 @@
                       <?php } ?>
                     </tr>
                     <tr>
-                      <td>PlexPy</td>
-                      <td><?php echo T('PLEXPY'); ?></td>
-                      <?php if (file_exists("/install/.plexpy.lock")) { ?>
-                        <td style="vertical-align: middle; text-align: center"><a href="javascript:void()" data-toggle="modal" data-target="#plexpyRemovalConfirm" class="btn btn-xs btn-success"><?php echo T('INSTALLED'); ?></a></td>
+                      <td>Tautulli</td>
+                      <td><?php echo T('TAUTULLI'); ?></td>
+                      <?php if (file_exists("/install/.tautulli.lock")) { ?>
+                        <td style="vertical-align: middle; text-align: center"><a href="javascript:void()" data-toggle="modal" data-target="#tautulliRemovalConfirm" class="btn btn-xs btn-success"><?php echo T('INSTALLED'); ?></a></td>
                       <?php } else { ?>
-                        <td style="vertical-align: middle; text-align: center"><a href="?installpackage-plexpy=true" data-toggle="modal" data-target="#sysResponse" id="plexpyInstall" class="btn btn-xs btn-default"><?php echo T('INSTALL'); ?></a></td>
+                        <td style="vertical-align: middle; text-align: center"><a href="?installpackage-tautulli=true" data-toggle="modal" data-target="#sysResponse" id="tautulliInstall" class="btn btn-xs btn-default"><?php echo T('INSTALL'); ?></a></td>
                       <?php } ?>
                     </tr>
                     <tr>

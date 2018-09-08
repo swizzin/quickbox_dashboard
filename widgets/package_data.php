@@ -14,7 +14,7 @@ $packages = array(
         'nzbhydra',
         'ombi',
         'plex',
-        'plexpy',
+        'tautulli',
         'pyload',
         'quassel',
         'quota',

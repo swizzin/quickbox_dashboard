@@ -249,7 +249,7 @@ $nzbget = processExists("nzbget",$username);
 $nzbhydra = processExists("nzbhydra",$username);
 $ombi = processExists("ombi",$username);
 $plex = processExists("Plex",plex);
-$plexpy = processExists("plexpy",plexpy);
+$tautulli = processExists("Tautulli",tautulli);
 $pyload = processExists("pyload",$username);
 $radarr = processExists("radarr",$username);
 $rtorrent = processExists("rtorrent",$username);
@@ -297,7 +297,7 @@ if(file_exists('/srv/panel/custom/url.override.php')){
   $nzbgetURL = "https://" . $_SERVER['HTTP_HOST'] . "/nzbget";
   $nzbhydraURL = "https://" . $_SERVER['HTTP_HOST'] . "/nzbhydra";
   $plexURL = "http://" . $_SERVER['HTTP_HOST'] . ":32400/web/";
-  $plexpyURL = "https://" . $_SERVER['HTTP_HOST'] . "/plexpy";
+  $tautulliURL = "https://" . $_SERVER['HTTP_HOST'] . "/tautulli";
   $ombiURL = "https://" . $_SERVER['HTTP_HOST'] . "/ombi";
   $pyloadURL = "https://" . $_SERVER['HTTP_HOST'] . "/pyload/login";
   $radarrURL = "https://" . $_SERVER['HTTP_HOST'] . "/radarr";
@@ -360,8 +360,8 @@ case 0:
     $cbodypr .= $ombi;
   $plex = isEnabled("plexmediaserver",plex);
     $cbodyp .= $plex;
-  $plexpy = isEnabled("plexpy",plexpy);
-    $cbodypp .= $plexpy;
+  $tautulli = isEnabled("tautulli",tautulli);
+    $cbodypp .= $tautulli;
   $pyload = isEnabled("pyload", $username);
     $cbodypl .= $pyload;
   $quassel = isEnabled("quassel", $username);
@@ -420,7 +420,7 @@ case 66:
     } elseif ($process == "plexmediaserver"){
       shell_exec("sudo systemctl enable $process");
       shell_exec("sudo systemctl start $process");
-    } elseif ($process == "plexpy"){
+    } elseif ($process == "tautulli"){
       shell_exec("sudo systemctl enable $process");
       shell_exec("sudo systemctl start $process");
     } elseif ($process == "ombi"){
@@ -477,7 +477,7 @@ case 77:
     } elseif ($process == "plexmediaserver"){
       shell_exec("sudo systemctl stop $process");
       shell_exec("sudo systemctl disable $process");
-    } elseif ($process == "plexpy"){
+    } elseif ($process == "tautulli"){
       shell_exec("sudo systemctl stop $process");
       shell_exec("sudo systemctl disable $process");
     } elseif ($process == "ombi"){
@@ -520,7 +520,7 @@ case 88:
     } elseif ($process == "plexmediaserver"){
       shell_exec("sudo systemctl enable $process");
       shell_exec("sudo systemctl restart $process");
-    } elseif ($process == "plexpy"){
+    } elseif ($process == "tautulli"){
       shell_exec("sudo systemctl enable $process");
       shell_exec("sudo systemctl restart $process");
     } elseif ($process == "ombi"){

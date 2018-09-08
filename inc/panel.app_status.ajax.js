@@ -166,14 +166,14 @@ $(document).ready(function() {
   }
   appstat_plex();
 
-  // <<-------- PLEXPY -------->> //
-  function appstat_plexpy() {
-    $.ajax({url: "widgets/app_status/app_status_plexpy.php", cache:true, success: function (result) {
-      $('#appstat_plexpy').html(result);
-      setTimeout(function(){appstat_plexpy()}, 1000);
+  // <<-------- TAUTULLI -------->> //
+  function appstat_tautulli() {
+    $.ajax({url: "widgets/app_status/app_status_tautulli.php", cache:true, success: function (result) {
+      $('#appstat_tautulli').html(result);
+      setTimeout(function(){appstat_tautulli()}, 1000);
     }});
   }
-  appstat_plexpy();
+  appstat_tautulli();
 
   // <<-------- PYLOAD -------->> //
   function appstat_pyload() {
