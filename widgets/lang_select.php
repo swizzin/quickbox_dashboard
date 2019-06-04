@@ -1,6 +1,7 @@
 <?php
 
 $language = array(
+	'lang_es',
         'lang_de',
         'lang_dk',
         'lang_en',

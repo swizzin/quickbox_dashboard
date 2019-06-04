@@ -97,6 +97,7 @@
                             <div class="col-xs-12">
                               <div class="col-xs-12 col-md-6" style="padding: 0">
                                 <?php $language = array();
+				$language[] = array('file' => 'lang_es', 'title' =>'Spanish');
                                 $language[] = array('file' => 'lang_dk', 'title' =>'Danish');
                                 $language[] = array('file' => 'lang_en', 'title' =>'English');
                                 $language[] = array('file' => 'lang_fr', 'title' =>'French');
