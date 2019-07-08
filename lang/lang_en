@@ -121,6 +121,7 @@ $L['COUCHPOTATO'] = 'Download movies automatically, easily and in the best quali
 $L['CSF'] = 'ConfigServer Firewall, also known as CSF, is a firewall configuration script created to provide better security for your server while giving you an easy to use, advanced interface for managing your firewall settings.';
 $L['DELUGE'] = 'Deluge is a lightweight, Free Software, cross-platform BitTorrent client.';
 $L['EMBY'] = 'Emby Server is a client-server software package that lets consumers host their legal personal copies of multimedia — music, video and picture files. ... The Emby client software is an app you need to install on mobile devices and certain settop boxes for televisions, like Android TV.';
+$L['FILEBROWSER'] = 'filebrowser provides a file managing interface within a specified directory and it can be used to upload, delete, preview, rename and edit your files. It allows the creation of multiple users and each user can have its own directory.';
 $L['HEADPHONES'] = 'Headphones is an automated music downloader for NZB and Torrent, written in Python. It supports SABnzbd, NZBget, Transmission, µTorrent, Deluge and Blackhole.';
 $L['JACKETT'] = 'API Support for your favorite private trackers.';
 $L['LIDARR'] = 'Lidarr is a music collection manager for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new tracks from your favorite artists and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.';
