@@ -193,6 +193,9 @@
               <?php if (file_exists('/install/.emby.lock')) { ?>
                 <li><a class="grayscale" href="<?php echo "$embyURL"; ?>" target="_blank"><img src="img/brands/emby.png" class="brand-ico"> <span>Emby</span></a></li>
               <?php } ?>
+              <?php if (file_exists('/install/.filebrowser.lock')) { ?>
+                <li><a class="grayscale" href="<?php echo "$filebrowserURL"; ?>" target="_blank"><img src="img/brands/filebrowser.png" class="brand-ico"> <span>Filebrowser</span></a></li>
+              <?php } ?>
               <?php if (file_exists('/install/.headphones.lock')) { ?>
                 <li><a class="grayscale" href="<?php echo "$headphonesURL"; ?>" target="_blank"><img src="img/brands/headphones.png" class="brand-ico"> <span>Headphones</span></a></li>
               <?php } ?>
