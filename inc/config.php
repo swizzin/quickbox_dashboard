@@ -282,6 +282,7 @@ $sonarr = processExists("nzbdrone",$userRunning);
 $subsonic = processExists("subsonic",$userRunning);
 $syncthing = processExists("syncthing",$userRunning);
 $jackett = processExists("jackett",$userRunning);
+$jellyfin = processExistsOther("jellyfin",$username);
 $couchpotato = processExists("couchpotato",$userRunning);
 $quassel = processExists("quassel",$userRunning);
 $shellinabox = processExistsOther("shellinabox","shellinabox");
@@ -313,6 +314,7 @@ if(file_exists('/srv/panel/custom/url.override.php')){
   $floodURL = "https://" . $_SERVER['HTTP_HOST'] . "/flood/";
   $headphonesURL = "https://" . $_SERVER['HTTP_HOST'] . "/headphones/home";
   $jackettURL = "https://" . $_SERVER['HTTP_HOST'] . "/jackett/";
+  $jellyfinURL = "https://" . $_SERVER['HTTP_HOST'] . "/jellyfin/";
   $loungeURL = "https://" . $_SERVER['HTTP_HOST'] . "/irc";
   $lidarrURL = "http://" . $_SERVER['HTTP_HOST'] . "/lidarr";
   $medusaURL = "https://" . $_SERVER['HTTP_HOST'] . "/medusa";
@@ -374,6 +376,8 @@ case 0:
     $cbodyhp .= $headphones;
   $jackett = isEnabled("jackett", $username);
     $cbodyj .= $jackett;
+  $jellyfin = isEnabled("jellyfin", $username);
+    $cbodyjellyfin .= $jellyfin;
   $lidarr = isEnabled("lidarr", $username);
     $cbodylidarr .= $lidarr;
   $lounge = isEnabled("lounge", lounge);
@@ -432,6 +436,9 @@ case 66:
       shell_exec("sudo systemctl enable $process");
       shell_exec("sudo systemctl start $process");
     } elseif ($process == "emby-server"){
+      shell_exec("sudo systemctl enable $process");
+      shell_exec("sudo systemctl start $process");
+    } elseif ($process == "jellyfin"){
       shell_exec("sudo systemctl enable $process");
       shell_exec("sudo systemctl start $process");
     } elseif ($process == "headphones"){
@@ -501,6 +508,9 @@ case 77:
     } elseif ($process == "emby-server"){
       shell_exec("sudo systemctl stop $process");
       shell_exec("sudo systemctl disable $process");
+    } elseif ($process == "jellyfin"){
+      shell_exec("sudo systemctl stop $process");
+      shell_exec("sudo systemctl disable $process");
     } elseif ($process == "headphones"){
       shell_exec("sudo systemctl stop $process");
       shell_exec("sudo systemctl disable $process");
@@ -545,6 +555,9 @@ case 88:
       shell_exec("sudo systemctl enable $process");
       shell_exec("sudo systemctl restart $process");
     } elseif ($process == "emby-server"){
+      shell_exec("sudo systemctl enable $process");
+      shell_exec("sudo systemctl restart $process");
+    } elseif ($process == "jellyfin"){
       shell_exec("sudo systemctl enable $process");
       shell_exec("sudo systemctl restart $process");
     } elseif ($process == "headphones"){

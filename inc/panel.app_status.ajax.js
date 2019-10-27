@@ -101,7 +101,16 @@ $(document).ready(function() {
     }});
   }
   appstat_jackett();
-  
+
+  // <<-------- JELLYFIN -------->> //
+  function appstat_jellyfin() {
+    $.ajax({url: "widgets/app_status/app_status_jellyfin.php", cache:false, success: function (result) {
+      $('#appstat_jellyfin').html(result);
+      setTimeout(function (){appstat_jellyfin()}, 5000);
+    }});
+  }
+  appstat_jellyfin();
+
   // <<-------- LIDARR -------->> //
   function appstat_lidarr() {
     $.ajax({url: "widgets/app_status/app_status_lidarr.php", cache:false, success: function (result) {

@@ -202,6 +202,9 @@
               <?php if (file_exists('/install/.jackett.lock')) { ?>
                 <li><a class="grayscale" href="<?php echo "$jackettURL"; ?>" target="_blank"><img src="img/brands/jackett.png" class="brand-ico"> <span>Jackett</span></a></li>
               <?php } ?>
+              <?php if (file_exists('/install/.jellyfin.lock')) { ?>
+                <li><a class="grayscale" href="<?php echo "$jellyfinURL"; ?>" target="_blank"><img src="img/brands/jellyfin.png" class="brand-ico"> <span>Jellyfin</span></a></li>
+              <?php } ?>
               <?php if (file_exists('/install/.lidarr.lock')) { ?>
                 <li><a class="grayscale" href="<?php echo "$lidarrURL"; ?>" target="_blank"><img src="img/brands/lidarr.png" class="brand-ico"> <span>Lidarr</span></a></li>
               <?php } ?>
